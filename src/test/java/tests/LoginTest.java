@@ -6,12 +6,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class LoginTest extends BaseTest {
     Faker faker = new Faker();
+
+    @BeforeMethod
+    @Override
+    public void beforeMethod() {
+        super.beforeMethod();
+        loginPage.login();
+    }
 
     @Test
     public void visitsTheLoginPage1() {
@@ -20,12 +28,13 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void checksInputTypes2() {
-        Assert.assertEquals(loginPage.getEmailAtributeType(),"email");
-        Assert.assertEquals(loginPage.getPasswordAtributeType(), "password");
+        Assert.assertEquals(loginPage.getAtributeType(loginPage.getEmail()),"email");
+        Assert.assertEquals(loginPage.getAtributeType(loginPage.getPasswordSignup()), "password");
+
     }
 
     @Test
-    public void displaysErrorsWhenUserDoesnotExist3(){
+    public void displaysErrorsWhenUserDoesNotExist3(){
         loginPage.loginFillForm(faker.internet().emailAddress(), faker.internet().password());
         Assert.assertTrue(loginPage.getMessage().getText().contains("User does not exist"));
         Assert.assertTrue(driver.getCurrentUrl().contains("/login"));

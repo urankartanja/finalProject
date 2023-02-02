@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import pages.AdminPage;
 import pages.LoginPage;
 
 import java.time.Duration;
@@ -17,9 +18,8 @@ public abstract class BaseTest {
     protected WebDriverWait driverWait;
     protected final String BASE_URL = "https://vue-demo.daniel-avellaneda.com";
     protected LoginPage loginPage;
-
-
-
+    protected AdminPage adminPage;
+    Faker faker = new Faker();
 
 
     @BeforeClass
@@ -29,18 +29,19 @@ public abstract class BaseTest {
         driverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         loginPage = new LoginPage(driver, driverWait);
+        adminPage = new AdminPage(driver, driverWait);
 
 
     }
 
     @BeforeMethod
-    public void beforeMethod(){
+    public void beforeMethod() {
         driver.get("https://vue-demo.daniel-avellaneda.com");
-        loginPage.login();
+        faker = new Faker();
     }
 
 //    @AfterClass
-//    public void afterClass(){
+//    public void afterClass() {
 //        driver.quit();
 //    }
 
