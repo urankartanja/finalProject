@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.AdminPage;
 import pages.LoginPage;
+import pages.ProfilePage;
 
 import java.time.Duration;
 
@@ -19,6 +20,8 @@ public abstract class BaseTest {
     protected final String BASE_URL = "https://vue-demo.daniel-avellaneda.com";
     protected LoginPage loginPage;
     protected AdminPage adminPage;
+
+    protected ProfilePage profilePage;
     Faker faker = new Faker();
 
 
@@ -30,6 +33,7 @@ public abstract class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         loginPage = new LoginPage(driver, driverWait);
         adminPage = new AdminPage(driver, driverWait);
+        profilePage = new ProfilePage(driver, driverWait);
 
 
     }

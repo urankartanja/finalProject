@@ -44,14 +44,14 @@ public class AdminPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"delete\"]")
     private WebElement deleteCitiButton;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div[7]/div/div/div[1]")
-    private WebElement messageWarningDeleteCiti;
-
-    @FindBy(xpath = "//*[@id=\"app\"]/div[7]/div/div/div[2]/button[2]")
-    private WebElement deleteMessageWarningDeleteCiti;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[8]/div/div/div[2]/button[2]")
+    private WebElement confirmDeleteCity;
 
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]")
-    private WebElement messageCitiDeleted;
+    private WebElement confirmMessageDeleteCity;
+
+
+
 
 
 
@@ -108,17 +108,11 @@ public class AdminPage extends BasePage {
         return deleteCitiButton;
     }
 
-    public WebElement getMessageWarningDeleteCiti() {
-        return messageWarningDeleteCiti;
+    public WebElement getConfirmDeleteCity() {
+        return confirmDeleteCity;
     }
 
-    public WebElement getDeleteMessageWarningDeleteCiti() {
-        return deleteMessageWarningDeleteCiti;
+    public WebElement getConfirmMessageDeleteCity() {
+        return confirmMessageDeleteCity;
     }
-
-    public WebElement getMessageCitiDeleted() {
-        return messageCitiDeleted;
-    }
-
-
 }

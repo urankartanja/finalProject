@@ -13,20 +13,15 @@ public class LocalePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"app\"]/div/div/header/div/div[3]/button")
     private WebElement languageButton;
 
-    @FindBy(id = "list-item-73")
+    @FindBy(className= "btnEN")
     private WebElement en;
 
-    @FindBy(id = "list-item-75")
+    @FindBy(className = "btnES")
     private WebElement es;
 
-    @FindBy(id = "list-item-77")
+    @FindBy(className = "btnFR")
     private WebElement fr;
 
-    @FindBy(id = "list-item-79")
-    private WebElement cn;
-
-    @FindBy(id = "list-item-81")
-    private WebElement ua;
 
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[1]/div[1]/h1")
     private WebElement headerText;

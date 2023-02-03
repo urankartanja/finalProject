@@ -45,42 +45,51 @@ public class AdminCitiesTests extends BaseTest {
         adminPage.getFillCitiName().sendKeys(citi);
         adminPage.getSaveCiti().click();
         Assert.assertTrue(adminPage.getMessageCitiSave().getText().contains("Saved successfully"));
+       // adminPage.getLogoutAdminButton().click();
+
     }
 
     @Test
     public void editCity3() {
-        adminPage.getEditButton().click(); // traziti po listi veb elemenata koji je zrenjanin
-        adminPage.getFillCitiName().sendKeys( "edited");
+        createNewCity2();
+        adminPage.getEditButton().click();
+        adminPage.getFillCitiName().sendKeys("edited");
         adminPage.getSaveCiti().click();
         Assert.assertTrue(adminPage.getMessageCitiSave().getText().contains("Saved successfully"));
+        //adminPage.getLogoutAdminButton().click();
+
 
     }
 
     @Test
     public void searchCity4() {
-        adminPage.getSearchCity().sendKeys(citi);
+        createNewCity2();
+        editCity3();
+        adminPage.getSearchCity().sendKeys(citi + "edited");
         adminPage.getEditedCitiName().click();
         Assert.assertTrue(adminPage.getCitiNameEdited().getText().equals(adminPage.getSearchCity().getAttribute("value")));
-
+       // adminPage.getLogoutAdminButton().click();
     }
 
     @Test
     public void deleteCity5() {
-        adminPage.getSearchCity().sendKeys(citi);
-        adminPage.getEditedCitiName().click();
-        Assert.assertTrue(adminPage.getCitiNameEdited().getText().equals(adminPage.getSearchCity().getAttribute("value")));
-
+        createNewCity2();
+        editCity3();
+        searchCity4();
         adminPage.getDeleteCitiButton().click();
-        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div[7]/div/div/div[1]")));
-        adminPage.getDeleteMessageWarningDeleteCiti().click();
-        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]")));
-        Assert.assertTrue(adminPage.getMessageCitiDeleted().getText().contains("Saved successfully"));
+        adminPage.getConfirmDeleteCity().click();
+        Assert.assertTrue(adminPage.getConfirmMessageDeleteCity().getText().contains("Deleted successfully"));
+        // adminPage.getLogoutAdminButton().click();
+
+
 
     }
 
-
-    @AfterMethod
-    public void afterMethod(){
-        adminPage.getLogoutAdminButton().click();
-    }
+//    @AfterClass
+//    @Override
+//    public void afterClass() {
+//       // super.afterClass();
+//        adminPage.getLogoutAdminButton().click();
+//    }
 }
+
