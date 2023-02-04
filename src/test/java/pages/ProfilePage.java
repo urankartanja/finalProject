@@ -39,6 +39,26 @@ public class ProfilePage extends BasePage {
     private WebElement messageSuccessfullySaved;
 
 
+    public WebElement getPhone() {
+        return phone;
+    }
+
+    public WebElement getCity() {
+        return city;
+    }
+
+    public WebElement getCountry() {
+        return country;
+    }
+
+    public WebElement getTwitter() {
+        return twitter;
+    }
+
+    public WebElement getGithub() {
+        return github;
+    }
+
     public WebElement getMessageSuccessfullySaved() {
         return messageSuccessfullySaved;
     }

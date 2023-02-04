@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
 
-    //private WebElement webelement;
-
     @FindBy(xpath = "//*[@id=\"app\"]/div/div/header/div/div[3]/a[3]")
     private WebElement loginButton;
 

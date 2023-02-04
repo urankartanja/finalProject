@@ -47,7 +47,7 @@ public class LocalePage extends BasePage {
         return fr;
     }
 
-    public WebElement getHederText() {
+    public WebElement getHeaderText() {
         return headerText;
     }
 }

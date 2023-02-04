@@ -20,19 +20,19 @@ public class LocaleTests extends BaseTest {
     @Test
     public void setLocaleToES() {
         localePage.getEs().click();
-        Assert.assertTrue(localePage.getHederText().getText().contains("Página de aterrizaje"));
+        Assert.assertTrue(localePage.getHeaderText().getText().contains("Página de aterrizaje"));
     }
 
     @Test
     public void setLocaleToEN(){
         localePage.getEn().click();
-        Assert.assertTrue(localePage.getHederText().getText().contains("Landing"));
+        Assert.assertTrue(localePage.getHeaderText().getText().contains("Landing"));
     }
 
     @Test
     public void setLocaleToFR(){
         localePage.getFr().click();
-        Assert.assertTrue(localePage.getHederText().getText().contains("Page d'atterrissage"));
+        Assert.assertTrue(localePage.getHeaderText().getText().contains("Page d'atterrissage"));
     }
 
 
