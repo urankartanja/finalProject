@@ -2,6 +2,8 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -45,7 +47,7 @@ public class AdminCitiesTests extends BaseTest {
         adminPage.getFillCitiName().sendKeys(citi);
         adminPage.getSaveCiti().click();
         Assert.assertTrue(adminPage.getMessageCitiSave().getText().contains("Saved successfully"));
-       // adminPage.getLogoutAdminButton().click();
+
 
     }
 
@@ -56,7 +58,6 @@ public class AdminCitiesTests extends BaseTest {
         adminPage.getFillCitiName().sendKeys("edited");
         adminPage.getSaveCiti().click();
         Assert.assertTrue(adminPage.getMessageCitiSave().getText().contains("Saved successfully"));
-        //adminPage.getLogoutAdminButton().click();
 
 
     }
@@ -68,28 +69,20 @@ public class AdminCitiesTests extends BaseTest {
         adminPage.getSearchCity().sendKeys(citi + "edited");
         adminPage.getEditedCitiName().click();
         Assert.assertTrue(adminPage.getCitiNameEdited().getText().equals(adminPage.getSearchCity().getAttribute("value")));
-       // adminPage.getLogoutAdminButton().click();
+
     }
 
     @Test
     public void deleteCity5() {
+
         createNewCity2();
-        editCity3();
-        searchCity4();
+        adminPage.getSearchCity().sendKeys(citi);
+        adminPage.getEditedCitiName().click();
         adminPage.getDeleteCitiButton().click();
         adminPage.getConfirmDeleteCity().click();
         Assert.assertTrue(adminPage.getConfirmMessageDeleteCity().getText().contains("Deleted successfully"));
-        // adminPage.getLogoutAdminButton().click();
-
-
 
     }
-
-//    @AfterClass
-//    @Override
-//    public void afterClass() {
-//       // super.afterClass();
-//        adminPage.getLogoutAdminButton().click();
-//    }
 }
+
 

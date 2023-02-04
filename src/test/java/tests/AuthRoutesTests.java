@@ -14,7 +14,7 @@ public class AuthRoutesTests extends BaseTest {
     }
 
     @Test
-    public void forbidsVisitsToHomeUrlIfNotAuthenticated() {
+    public void forbidsVisitsToHomeUrlIfNotAuthenticated1() {
         Assert.assertTrue(driver.getCurrentUrl().contains("/login"));
     }
 

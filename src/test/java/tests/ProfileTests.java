@@ -22,7 +22,6 @@ public class ProfileTests extends BaseTest {
         profilePage.myProfileFillForm(phone,city,country,twitter,github );
 
         Assert.assertTrue(profilePage.getMessageSuccessfullySaved().getText().contains("Profile saved successfuly"));
-
         Assert.assertEquals(profilePage.getPhone().getAttribute("value"), phone);
         Assert.assertEquals(profilePage.getCity().getAttribute("value"), city);
         Assert.assertEquals(profilePage.getCountry().getAttribute("value"),country);

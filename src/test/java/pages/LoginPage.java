@@ -50,7 +50,7 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[3]/div/div/div/div/div[1]")
     private WebElement message3;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div[4]/div/div/div[1]")
+    @FindBy(css = "#app > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__title.headline.grey.lighten-2.black--text.dlgVerifyAccount")
     private WebElement message4;
 
 

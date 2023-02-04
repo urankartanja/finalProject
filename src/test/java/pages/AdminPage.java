@@ -38,22 +38,17 @@ public class AdminPage extends BasePage {
     @FindBy(id = "search")
     private WebElement searchCity;
 
-    @FindBy(className = "text-left")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[1]/div[2]/table/tbody/tr/td[2]")
     private WebElement citiNameEdited;
 
     @FindBy(xpath = "//*[@id=\"delete\"]")
     private WebElement deleteCitiButton;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div[8]/div/div/div[2]/button[2]")
+    @FindBy(css = "#app > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions > button.v-btn.v-btn--text.theme--light.v-size--default.red--text.text--lighten3")
     private WebElement confirmDeleteCity;
 
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]")
     private WebElement confirmMessageDeleteCity;
-
-
-
-
-
 
 
     public WebElement getAdminButton() {
