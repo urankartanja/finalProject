@@ -44,10 +44,10 @@ public abstract class BaseTest {
         faker = new Faker();
     }
 
-//    @AfterClass
-//    public void afterClass() {
-//        driver.quit();
-//    }
+    @AfterClass
+    public void afterClass() {
+        driver.quit();
+    }
 
 
 }
