@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class LoginTest extends BaseTest {
-    Faker faker = new Faker();
+
 
     @BeforeMethod
     @Override

@@ -40,14 +40,14 @@ public abstract class BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver.get("https://vue-demo.daniel-avellaneda.com");
+        driver.get(BASE_URL);
         faker = new Faker();
     }
 
-    @AfterClass
-    public void afterClass() {
-        driver.quit();
-    }
+//    @AfterClass
+//    public void afterClass() {
+//        driver.quit();
+//    }
 
 
 }

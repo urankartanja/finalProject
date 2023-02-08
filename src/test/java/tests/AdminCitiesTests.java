@@ -80,6 +80,7 @@ public class AdminCitiesTests extends BaseTest {
         adminPage.getEditedCitiName().click();
         adminPage.getDeleteCitiButton().click();
         adminPage.getConfirmDeleteCity().click();
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]/button/span")));
         Assert.assertTrue(adminPage.getConfirmMessageDeleteCity().getText().contains("Deleted successfully"));
 
     }
